@@ -5,13 +5,23 @@
 {% block content %}
     <h2>Liste des articles</h2>
     <form method="get" action="">
+        <div>
+            <input type="radio" name="champ" id="nom" value="nom" />
+            <label for="nom">Nom</label>
+            <input type="radio" name="champ" id="categorie" value="categorie" />
+            <label for="categorie">Categorie</label>
+            <input type="radio" name="champ" id="date" value="date" />
+            <label for="date">Date</label>
+        </div>
+
+
         <input type="text" name="q" placeholder="Rechercher un article">
         <button type="submit">Rechercher</button>
     </form>
     <ul>
         {% for article in articles %}
             <li>
-                <p><strong>{{ article.titre }}</strong> - {{ article.date_publication|date:"d/M/Y - H:i" }}</p>
+                <p><strong>{{ article.titre }} ({{ article.categorie}})</strong> - {{ article.date_publication|date:"d/M/Y - H:i" }}</p>
                 <p>{{ article.contenu }}</p>
             </li>
         {% endfor %}
