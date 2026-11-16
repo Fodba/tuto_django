@@ -6,6 +6,16 @@ from .forms import ArticleForm, CategorieForm
 from .models import Article, Categorie
 
 # Create your views here.
+def hello_world(request):
+    context = {
+        "message" : "hello world !!!",
+    }
+    return render(
+        request=request,
+        template_name="base.html",
+        context=context,
+    )
+
 def liste_articles(request):
     articles = Article.objects.all()
     context = {
