@@ -11,7 +11,7 @@
     <ul>
         {% for article in articles %}
             <li>
-                <p><strong>{{ article.titre }}</strong> - {{ article.date_publication|date:"D M Y" }}</p>
+                <p><strong>{{ article.titre }}</strong> - {{ article.date_publication|date:"d/M/Y - H:i" }}</p>
                 <p>{{ article.contenu }}</p>
             </li>
         {% endfor %}
